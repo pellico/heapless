@@ -2,7 +2,7 @@
 
 use core::borrow::{Borrow, BorrowMut};
 
-pub(crate) trait SealedStorage {
+pub trait SealedStorage {
     type Buffer<T>: ?Sized + Borrow<[T]> + BorrowMut<[T]>;
     /// Obtain the length of the buffer
     #[allow(unused)]
